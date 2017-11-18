@@ -25,7 +25,7 @@ SECRET_KEY = 'loj3nd!43i!aw@d4*!q!up0-bd)$pbu1kjzf$s)_1@nfhr^i0$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['burke.sh']
 
 
 # Application definition
