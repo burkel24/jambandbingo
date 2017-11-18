@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { loadGames } from '../actions/games';
 import GameList from '../components/gameList';
 
 const mapStateToProps = state => {

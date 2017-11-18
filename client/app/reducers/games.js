@@ -1,8 +1,8 @@
-import { LOAD_GAMES } from '../actions/games';
+import { FETCH_GAMES } from '../actions/games';
 
 function games(state = [], action) {
   switch (action.type) {
-    case LOAD_GAMES:
+    case FETCH_GAMES:
       return [
         {
           name: 'Dummy Game',

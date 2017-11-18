@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
-import boardsById from './boardsById';
+import boardsByGameId from './boardsByGameId';
 import games from './games';
 import songs from './songs';
 import songsById from './songsById';
 
 const rootReducer = combineReducers({
-  boardsById,
+  boardsByGameId,
   games,
   songs,
   songsById

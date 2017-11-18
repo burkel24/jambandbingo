@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { fetchBoard } from '../actions/board';
 import Game from '../components/game';
 
 const mapStateToProps = (state, ownProps) => {
   const game = state.games.find(aGame => aGame.id === ownProps.gameId);
-  const board = state.boardsById[game.boardId];
+  const board = state.boardsByGameId[ownProps.gameId];
 
   return {
     game,
@@ -13,8 +14,12 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {};
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onInit: () => {
+      dispatch(fetchBoard(ownProps.gameId))
+    }
+  };
 };
 
 const GameContainer = connect(

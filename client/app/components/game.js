@@ -1,13 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-const Game = ({ board, game }) => {
-  return (
-    <View style={styles.container}>
-      <Text>{game.name}</Text>
-    </View>
-  )
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -18,4 +10,25 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Game;
+export default class Game extends Component {
+  componentDidMount() {
+    this.props.onInit();
+  }
+
+  render() {
+    const { board, game } = this.props;
+
+    if (board && board.checkers) {
+      return (
+        <View style={styles.container} >
+          <Text>{this.props.board.checkers.length}</Text>
+        </View>
+      );
+    } else {
+      return (
+        <Text>Loading…</Text>
+      );
+    }
+  }
+
+}

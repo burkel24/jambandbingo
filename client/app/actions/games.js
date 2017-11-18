@@ -1,6 +1,6 @@
-export const LOAD_GAMES = 'LOAD_GAMES';
-export function loadGames() {
+export const FETCH_GAMES = 'FETCH_GAMES';
+export function fetchGames() {
   return {
-    type: LOAD_GAMES
+    type: FETCH_GAMES
   };
 }

@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk'
 
-import { loadGames } from './app/actions/games';
+import { fetchGames } from './app/actions/games';
 import rootReducer from './app/reducers/reducers';
 import RootNavigator from './app/rootNavigator';
-const store = createStore(rootReducer);
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunkMiddleware)
+);
 
 const App = () => {
   return (
@@ -16,6 +21,6 @@ const App = () => {
   )
 }
 
-store.dispatch(loadGames());
+store.dispatch(fetchGames());
 
 export default App
