@@ -7,8 +7,10 @@ import Game from '../components/game';
 const mapStateToProps = (state, ownProps) => {
   const game = state.games.find(aGame => aGame.id === ownProps.gameId);
   const board = state.boardsByGameId[ownProps.gameId];
+  const availableSongs = []; // TODO
 
   return {
+    availableSongs,
     game,
     board
   };

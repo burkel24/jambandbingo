@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Board from './board';
+
 const styles = StyleSheet.create({
   container: {
     padding: 25,
@@ -18,17 +20,15 @@ export default class Game extends Component {
   render() {
     const { board, game } = this.props;
 
+    let content;
     if (board && board.checkers) {
-      return (
-        <View style={styles.container} >
-          <Text>{this.props.board.checkers.length}</Text>
-        </View>
-      );
+      content = <Board checkers={board.checkers} />
     } else {
-      return (
-        <Text>Loading…</Text>
-      );
+      content = <Text>Loading…</Text>
     }
-  }
 
+    return (
+      <View style={styles.container} >{content}</View>
+    );
+  }
 }

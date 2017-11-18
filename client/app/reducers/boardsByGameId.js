@@ -12,7 +12,11 @@ function createBoard(gameId) {
 
   for (let row = 0; row < BOARD_DIMENSION; row++) {
     for (let col = 0; col < BOARD_DIMENSION; col++) {
-      checkers.push({ row, col });
+      checkers.push({
+        row,
+        col,
+        key: `(${row}, ${col})`
+      });
     }
   }
 
