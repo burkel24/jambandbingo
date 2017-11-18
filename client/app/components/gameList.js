@@ -16,7 +16,7 @@ class GameList extends Component {
           data={this.props.games}
           renderItem={({item}) => {
             return (
-              <TouchableHighlight style={styles.card} onPress={this.props.openGame}>
+              <TouchableHighlight style={styles.card} onPress={() => this.props.openGame(item.id)}>
                 <Text>{item.name}</Text>
               </TouchableHighlight>
             )

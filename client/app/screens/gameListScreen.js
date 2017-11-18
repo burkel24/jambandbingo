@@ -21,7 +21,7 @@ const GameListContainer = connect(
 
 export default class GameListScreen extends Component {
   static navigationOptions = {
-    title: 'Jam Band Bingo',
+    title: 'Games',
   };
 
   openGame(gameId) {
