@@ -8,27 +8,21 @@ import {
 } from 'react-native';
 
 // const GameCard = ()
-class GameList extends Component {
-  render() {
-    return (
-      <View>
-        <FlatList
-          data={this.props.games}
-          renderItem={({item}) => {
-            return (
-              <TouchableHighlight style={styles.card} onPress={() => this.props.openGame(item.id)}>
-                <Text>{item.name}</Text>
-              </TouchableHighlight>
-            )
-          }}
-        />
-      </View>
-    )
-  }
-
-  componentDidMount() {
-    this.props.loadGames();
-  }
+const GameList = ({ games, onGameClick }) => {
+  return (
+    <View>
+      <FlatList
+        data={games}
+        renderItem={({item}) => {
+          return (
+            <TouchableHighlight style={styles.card} onPress={() => onGameClick(item.id)}>
+              <Text>{item.name}</Text>
+            </TouchableHighlight>
+          )
+        }}
+      />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({

@@ -4,7 +4,13 @@ import { connect } from 'react-redux';
 import Game from '../components/game';
 
 const mapStateToProps = (state, ownProps) => {
-  return { game: state.games.find(aGame => aGame.id === ownProps.gameId) };
+  const game = state.games.find(aGame => aGame.id === ownProps.gameId);
+  const board = state.boardsById[game.boardId];
+
+  return {
+    game,
+    board
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

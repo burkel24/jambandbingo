@@ -8,15 +8,8 @@ const mapStateToProps = state => {
   return { games: state.games };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    loadGames: () => dispatch(loadGames())
-  }
-};
-
 const GameListContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(GameList)
 
 export default class GameListScreen extends Component {
@@ -29,5 +22,5 @@ export default class GameListScreen extends Component {
     navigate('Game', { gameId });
   }
 
-  render = () => (<GameListContainer openGame={this.openGame.bind(this)} />);
+  render = () => (<GameListContainer onGameClick={this.openGame.bind(this)} />);
 }
