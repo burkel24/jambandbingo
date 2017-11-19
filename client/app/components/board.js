@@ -3,20 +3,17 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Checker from './checker';
 import { BOARD_DIMENSION } from '../actions/board';
+import { GREY } from '../styles/styleVariables';
 
 const styles = StyleSheet.create({
   row: {
     flex: 0,
     flexDirection: 'row',
-    borderColor: '#3f3f3f',
-    justifyContent: 'space-between',
-    borderWidth: 1,
-    height: 50,
-    marginBottom: -1
+    height: 75,
   },
   container: {
-    padding: 25,
-    width: '100%'
+    borderTopWidth: 1,
+    borderColor: GREY
   }
 });
 
@@ -24,12 +21,9 @@ const Board = ({ checkers, availableSongs }) => {
   const renderRow = (index, checkers) => {
     const renderedCheckers = checkers.sort((checkerA, checkerB) => checkerA.col > checkerB.col)
       .map(aChecker => {
+
         return (
-          <Checker isChecked={aChecker.isFree || aChecker.isChecked}
-            key={aChecker.key}
-            label={aChecker.song ? aChecker.song.name : aChecker.key}
-            width={`${100 / BOARD_DIMENSION}%`}
-          />
+          <Checker checker={aChecker} key={aChecker.key}/>
         );
       });
 
@@ -45,11 +39,9 @@ const Board = ({ checkers, availableSongs }) => {
   });
 
   return (
-    <ScrollView style={styles.container} maximumZoomScale={1.5}>
-      <View>
-        {displayedRows}
-      </View>
-    </ScrollView>
+    <View style={styles.container} maximumZoomScale={1.5}>
+      {displayedRows}
+    </View>
   )
 }
 

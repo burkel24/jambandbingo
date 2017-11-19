@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Board from './board';
+import Card from './card';
+// import CardStyle from '../styles/cardStyles';
 import { GREY } from '../styles/styleVariables';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: GREY,
+    padding: 25,
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center'
@@ -23,13 +26,14 @@ export default class Game extends Component {
 
     let content;
     if (board && board.checkers) {
-      content = <Board checkers={board.checkers} availableSongs={availableSongs} />
+      renderedBoard = <Board checkers={board.checkers} availableSongs={availableSongs} />
+      content = <Card title={'My Board'} content={renderedBoard} />
     } else {
       content = <Text>Loading…</Text>
     }
 
     return (
-      <View style={styles.container} >{content}</View>
+      <View style={styles.container}>{content}</View>
     );
   }
 }

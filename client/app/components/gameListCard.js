@@ -69,10 +69,9 @@ const GameListCard = ({ game, onGameClick }) => {
 
 const gameStyle = StyleSheet.create({
   container: {
-
+    padding: 25,
     paddingLeft: 15,
     borderLeftWidth: 25,
-
     marginBottom: 15
   },
   header: {

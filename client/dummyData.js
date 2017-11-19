@@ -83,6 +83,7 @@ function createBoard(gameId) {
         songId: Math.floor(Math.random() * 3) + 1,
         isFree: (col === freeIndex && row === freeIndex),
         isChecked: (Math.random() <= .5)
+        // isChecked: false
       });
     }
   }
