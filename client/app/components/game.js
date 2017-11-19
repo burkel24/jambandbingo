@@ -5,7 +5,6 @@ import Board from './board';
 
 const styles = StyleSheet.create({
   container: {
-    padding: 25,
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center'
@@ -18,11 +17,11 @@ export default class Game extends Component {
   }
 
   render() {
-    const { board, game } = this.props;
+    const { board, game, availableSongs } = this.props;
 
     let content;
     if (board && board.checkers) {
-      content = <Board checkers={board.checkers} />
+      content = <Board checkers={board.checkers} availableSongs={availableSongs} />
     } else {
       content = <Text>Loading…</Text>
     }

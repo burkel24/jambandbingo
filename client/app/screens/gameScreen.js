@@ -6,8 +6,17 @@ import Game from '../components/game';
 
 const mapStateToProps = (state, ownProps) => {
   const game = state.games.find(aGame => aGame.id === ownProps.gameId);
+
   const board = state.boardsByGameId[ownProps.gameId];
-  const availableSongs = []; // TODO
+  if (board && board.checkers) {
+    board.checkers.filter(aChecker => !!aChecker.songId).forEach(aChecker => {
+      aChecker.song = state.songsById[aChecker.songId]
+    });
+  }
+
+
+  const availableSongs = state.songs.map(songId => state.songsById[songId])
+    .filter(aSong => aSong.artist === 'Umphreys Mcgee')
 
   return {
     availableSongs,

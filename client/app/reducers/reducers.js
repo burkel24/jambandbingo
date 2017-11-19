@@ -2,8 +2,7 @@ import { combineReducers } from 'redux';
 
 import boardsByGameId from './boardsByGameId';
 import games from './games';
-import songs from './songs';
-import songsById from './songsById';
+import { songs, songsById } from './songs';
 
 const rootReducer = combineReducers({
   boardsByGameId,

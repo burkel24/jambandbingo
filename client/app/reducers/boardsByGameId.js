@@ -12,10 +12,15 @@ function createBoard(gameId) {
 
   for (let row = 0; row < BOARD_DIMENSION; row++) {
     for (let col = 0; col < BOARD_DIMENSION; col++) {
+      const freeIndex = Math.floor(BOARD_DIMENSION / 2);
+
       checkers.push({
         row,
         col,
-        key: `(${row}, ${col})`
+        key: `(${row}, ${col})`,
+        songId: Math.floor(Math.random() * 3) + 1,
+        isFree: (col === freeIndex && row === freeIndex),
+        isChecked: (Math.random() <= .5)
       });
     }
   }

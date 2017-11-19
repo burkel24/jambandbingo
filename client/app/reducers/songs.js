@@ -1,7 +1,24 @@
-const dummyState = []
+import { SONGS_LOADED } from '../actions/songs';
 
-function songs(state = dummyState, action) {
-  return state;
+export function songsById(state = {}, action) {
+  switch (action.type) {
+    case SONGS_LOADED:
+      const data = {};
+      action.songs.forEach(aSong => data[aSong.id] = aSong);
+      return Object.assign({}, state, data);
+
+    default:
+      return state;
+  }
 }
 
-export default songs
+export function songs(state = [], action) {
+  switch (action.type) {
+    case SONGS_LOADED:
+      return action.songs.map(aSong => aSong.id);
+
+    default:
+      return state;
+  }
+}
+
