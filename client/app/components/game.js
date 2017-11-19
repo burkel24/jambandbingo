@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Board from './board';
+import { GREY } from '../styles/styleVariables';
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: GREY,
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center'

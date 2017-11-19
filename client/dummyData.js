@@ -7,11 +7,33 @@ function dispatchDummyEvents(store) {
     {
       id: 1,
       key: 1,
-      name: 'A Game'
+      artist: 'Umphreys Mcgee',
+      venue: {
+        name: 'Beacon Theater',
+        city: 'New York City'
+      },
+      isActive: true,
+      hasJoined: false,
+      startTime: Date.now() - (60000 * 90),
+      completed: false
+    },
+    {
+      id: 2,
+      key: 2,
+      artist: 'Tauk',
+      venue: {
+        name: 'Okama Gamestheater',
+        city: 'New York City'
+      },
+      isActive: true,
+      hasJoined: false,
+      startTime: Date.now() + (60000 * 9000),
+      completed: false
     }
   ]));
 
   store.dispatch(boardLoaded(createBoard(1)));
+  store.dispatch(boardLoaded(createBoard(2)));
 
   store.dispatch(songsLoaded([
     {
