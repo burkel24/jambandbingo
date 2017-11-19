@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Board from './board';
 import Card from './card';
-// import CardStyle from '../styles/cardStyles';
 import { GREY } from '../styles/styleVariables';
 
 const styles = StyleSheet.create({

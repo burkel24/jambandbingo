@@ -39,7 +39,7 @@ const Board = ({ checkers, availableSongs }) => {
   });
 
   return (
-    <View style={styles.container} maximumZoomScale={1.5}>
+    <View style={styles.container}>
       {displayedRows}
     </View>
   )

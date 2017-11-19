@@ -42,17 +42,19 @@ const GameListCard = ({ game, onGameClick }) => {
     }
   }
 
+  const topRowStyles = [
+    flexStyles.row,
+    flexStyles.justifySpaceBetween,
+    flexStyles.alignCenter
+  ];
+
   return (
     <TouchableHighlight
       style={[CardStyle.container, gameStyle.container, { borderLeftColor }]}
       onPress={() => onGameClick(game.id)}>
 
       <View style={flexStyles.col}>
-        <View style={[
-          flexStyles.row,
-          flexStyles.justifySpaceBetween,
-          flexStyles.alignCenter]}
-         >
+        <View style={topRowStyles}>
           <Text style={gameStyle.header}>{game.artist}</Text>
           <Text>{status}</Text>
         </View>

@@ -4,7 +4,6 @@ import { Text, View } from 'react-native';
 import CardStyle from '../styles/cardStyles';
 
 const Card = ({ title, content }) => {
-
   return (
     <View style={CardStyle.container}>
       <View style={CardStyle.header}>
