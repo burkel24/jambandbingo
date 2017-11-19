@@ -20,7 +20,7 @@ const Checker = ({ isChecked, label, onClick, width }) => {
   const getStyle = () => {
     return {
       backgroundColor: isChecked ? 'red' : 'white',
-      width: width
+      width
     };
   };
 

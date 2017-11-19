@@ -14,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
     });
   }
 
-
   const availableSongs = state.songs.map(songId => state.songsById[songId])
     .filter(aSong => aSong.artist === 'Umphreys Mcgee')
 

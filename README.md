@@ -28,4 +28,5 @@ yarn start
 [Django Rest Social](https://github.com/PhilipGarnero/django-rest-framework-social-oauth2)
 
 [react-redux](https://redux.js.org/docs/basics/UsageWithReact.html)
+[async actions](https://redux.js.org/docs/advanced/AsyncActions.html)
 [react-native](https://facebook.github.io/react-native/docs/)

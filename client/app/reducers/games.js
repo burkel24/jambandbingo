@@ -1,20 +1,14 @@
-import { FETCH_GAMES } from '../actions/games';
+import { GAMES_LOADED, FETCH_GAMES } from '../actions/games';
 
 function games(state = [], action) {
   switch (action.type) {
-    case FETCH_GAMES:
-      return [
-        {
-          name: 'Dummy Game',
-          id: 1,
-          key: 1
-        }
-      ];
+    case GAMES_LOADED:
+      return action.games;
 
+    case FETCH_GAMES:
     default:
       return state;
   }
 }
-
 
 export default games;
